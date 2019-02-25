@@ -32,6 +32,6 @@ app.use(session({
 app.use(flash());
 app.use('/', users);
 app.use('/users', users);
-app.listen(3000, function () {
-	console.log('berjalan di port 3000');
+app.listen(9000, function () {
+	console.log('berjalan di port 9000');
 });

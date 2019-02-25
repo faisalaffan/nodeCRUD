@@ -1,11 +1,12 @@
 <%- include ../layouts/header.ejs %>
-<% if (messages.error) : %>
+
+<% if (messages.error) { %>
 	<p style="color: red"><% messages.error %></p>
-<% endif %>
+<% } %>
 	
-<% if (messages.success) : %>
+<% if (messages.success) { %>
 	<p style="color: green"><% messages.success %></p>
-<% endif %>
+<% } %>
 
 <form action="/users/add" method="post" name="form1">
 	<table>
