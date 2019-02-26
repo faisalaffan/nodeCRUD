@@ -99,6 +99,7 @@ app.get('/edit/:id', function (req, res, next) {
 		} else {
 			res.render('user/edit', {
 				title: "EDIT DATA",
+				// data: rows[0],
 				id: result[0]._id,
 				nama: result[0].nama,
 				jurusan: result[0].jurusan,

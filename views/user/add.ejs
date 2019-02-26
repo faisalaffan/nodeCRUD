@@ -1,15 +1,41 @@
 <%- include ../layouts/header.ejs %>
 
 <% if (messages.error) { %>
-	<p style="color: red"><% messages.error %></p>
+<div class="alert alert-danger" role="alert">
+	<% messages.error %>
+</div>
 <% } %>
-	
+
 <% if (messages.success) { %>
-	<p style="color: green"><% messages.success %></p>
+<div class="alert alert-success" role="alert">
+  <% messages.success %>
+</div>
 <% } %>
 
 <form action="/users/add" method="post" name="form1">
-	<table>
-		
+	<table width="25%" border="0">
+		<tr>
+			<td>Nama</td>
+			<td><input type="text" name="nama" id="nama" value=""></td>
+		</tr>
+		<tr>
+			<td>Jurusan</td>
+			<td>
+				<input type="text" name="jurusan" id="jurusan">
+			</td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td><input type="text" name="email" id="email"></td>
+		</tr>
+		<tr>
+			<td>No Telephone</td>
+			<td><input type="text" name="no" id="no"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" name="submit" value="ADD"></td>
+		</tr>
 	</table>
+	
 </form>

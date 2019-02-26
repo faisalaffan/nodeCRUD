@@ -1,12 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hallo faisal</h1>
-</body>
-</html>
+<% include ../layouts/header.ejs %>
+<table width="80%" border=0>
+<tr>
+    <th>Nama</th>
+    <th>Jurusan</th>
+    <th>Email</th>
+    <th>No Telephone</th>
+    <th>Action</th>
+</tr>
+<% if (data) { %>
+    <% data.forEach(function(user) { %>
+    <tr>
+        <td>
+            <%= user.nama %>
+        </td>
+        <td>
+            <%= user.jurusan %>
+        </td>
+        <td>
+            <%= user.email %>
+        </td>
+        <td>
+            <%= user.no %>
+        </td>
+        <td>
+            <div style="float: left">
+                <a href="/users/edit/<%= user._id %> ">EDIT</a>
+                <form action="/users/delete/<%= user._id %> " method="POST">
+                    <input type="submit" value="Delete" onclick="confirm('apakah anda yakin untuk menghapus')">
+                    <input type="hidden" name="_method" value="DELETE">
+                </form>
+            </div>
+        </td>
+    </tr>
+    <% }) %>
+<% } %> 
+</table>
+<% include ../layouts/footer.ejs %> 

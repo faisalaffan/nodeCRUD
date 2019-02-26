@@ -33,5 +33,5 @@ app.use(flash());
 app.use('/', users);
 app.use('/users', users);
 app.listen(9000, function () {
-	console.log('berjalan di port 9000');
+	console.log('berjalan di port 9000');	
 });
